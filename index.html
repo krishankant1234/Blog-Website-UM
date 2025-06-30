@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SocialBlog - Share Your Stories</title>
+    <link rel="stylesheet" href="style.css" />
+    <style></style>
+  </head>
+  <body>
+    <!-- Header with Navigation -->
+    <header>
+      <nav class="nav-container">
+        <div class="logo">SocialBlog</div>
+        <ul class="nav-menu" id="nav-menu">
+          <li>
+            <a href="#" class="nav-link active" data-section="home">Home</a>
+          </li>
+          <li><a href="#" class="nav-link" data-section="about">About</a></li>
+          <li>
+            <a href="#" class="nav-link" data-section="contact">Contact</a>
+          </li>
+        </ul>
+        <div class="auth-buttons" id="auth-buttons">
+          <!-- Auth buttons will be dynamically updated -->
+        </div>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="section active">
+        <div class="hero">
+          <h1>Welcome to SocialBlog</h1>
+          <p>
+            Share your stories, connect with others, and discover amazing
+            content
+          </p>
+        </div>
+
+        <div class="posts-grid" id="posts-grid">
+          <!-- Blog posts will be generated here -->
+        </div>
+      </section>
+
+      <!-- Login Section -->
+      <section id="login" class="section">
+        <div class="auth-container">
+          <div class="auth-header">
+            <h2>Welcome Back</h2>
+            <p>Sign in to your account to continue</p>
+          </div>
+          <div id="login-message"></div>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-email">Email Address</label>
+              <input type="email" id="login-email" required />
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" required />
+            </div>
+            <button type="submit" class="auth-submit">Sign In</button>
+          </form>
+          <div class="auth-switch">
+            Don't have an account?
+            <a href="#" onclick="showSection('signup')">Sign up here</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Signup Section -->
+      <section id="signup" class="section">
+        <div class="auth-container">
+          <div class="auth-header">
+            <h2>Join SocialBlog</h2>
+            <p>Create your account to start sharing your stories</p>
+          </div>
+          <div id="signup-message"></div>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" required />
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email Address</label>
+              <input type="email" id="signup-email" required />
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input
+                type="password"
+                id="signup-password"
+                required
+                minlength="6"
+              />
+            </div>
+            <div class="form-group">
+              <label for="signup-confirm-password">Confirm Password</label>
+              <input
+                type="password"
+                id="signup-confirm-password"
+                required
+                minlength="6"
+              />
+            </div>
+            <button type="submit" class="auth-submit">Create Account</button>
+          </form>
+          <div class="auth-switch">
+            Already have an account?
+            <a href="#" onclick="showSection('login')">Sign in here</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Single Post Section -->
+      <section id="single-post" class="section">
+        <button class="back-btn" onclick="showSection('home')">
+          ← Back to Home
+        </button>
+        <div id="single-post-content"></div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+          <h3>Comments</h3>
+          <div id="comment-area">
+            <!-- Comment form will be inserted here based on auth status -->
+          </div>
+          <div id="comments-list"></div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <div class="about-content">
+          <h2>About SocialBlog</h2>
+          <p>
+            SocialBlog is a platform where people from all walks of life can
+            share their stories, experiences, and insights. Our mission is to
+            create a community where everyone's voice matters.
+          </p>
+          <p>
+            Whether you're a seasoned writer or just starting your journey,
+            SocialBlog provides you with the tools and audience to share your
+            thoughts with the world.
+          </p>
+          <p>
+            Join our growing community of storytellers, thinkers, and creators.
+            Share your perspective and discover new ideas from people around the
+            globe.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <div class="contact-content">
+          <h2>Contact Us</h2>
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
